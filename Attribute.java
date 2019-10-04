@@ -34,39 +34,39 @@ public class Attribute {
     }
 
     public void setA(int newstr) {
-        this.a = a;
+        this.a = newstr;
     }
 
     public void setB(int newdex) {
-        this.b = b;
+        this.b = newdex;
     }
 
     public void setC(int newcon) {
-        this.c = c;
+        this.c = newcon;
     }
 
     public void setD(int newwis) {
-        this.d = d;
+        this.d = newwis;
     }
 
     public void setE(int newint) {
-        this.e = e;
+        this.e = newint;
     }
 
     public void setF(int newwcha) {
-        this.f = f;
+        this.f = newwcha;
     }
 
     public void setG(String newRace) {
-        this.g = g;
+        this.g = newRace;
     }
 
     public void setJ(String newClas) {
-        this.j = j;
+        this.j = newClas;
     }
 
-    public void setR(String newClas) {
-        this.r = r;
+    public void setR(int newClasR) {
+        this.r = newClasR;
     }
 
     public int getA() {
