@@ -2,8 +2,40 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("Do you wish to generate a custom character?");
+        Scanner scanLineCustom = new Scanner(System.in);
+        String strCust = scanLineCustom.nextLine();
+        if (strCust.equalsIgnoreCase("y")  || strCust.equalsIgnoreCase("yes")) {
+            System.out.println("Please enter your character's Strength Stat");
+            Scanner scanStr = new Scanner(System.in);
+            int str = scanStr.nextInt();
+            System.out.println("Please enter your character's Dexterity Stat");
+            Scanner scanDex = new Scanner(System.in);
+            int dex = scanDex.nextInt();
+            System.out.println("Please enter your character's Constitution Stat");
+            Scanner scanCon = new Scanner(System.in);
+            int con = scanCon.nextInt();
+            System.out.println("Please enter your character's Wisdom Stat");
+            Scanner scanWis = new Scanner(System.in);
+            int wis = scanWis.nextInt();
+            System.out.println("Please enter your character's Intelligence Stat");
+            Scanner scanInt = new Scanner(System.in);
+            int intel = scanInt.nextInt();
+            System.out.println("Please enter your character's Charisma Stat");
+            Scanner scanCha = new Scanner(System.in);
+            int charisma = scanCha.nextInt();
+            System.out.println("Is your character an: Orc, Elf, Dragon, Human, Dwarf, Fairy, Beastkin or Etherial?");
+            Scanner scanLineCustom2 = new Scanner(System.in);
+            String strCust2 = scanLineCustom2.nextLine();
+            System.out.println("What class is your character?");
+            Scanner scanLineCustom3 = new Scanner(System.in);
+            String strCust3 = scanLineCustom3.nextLine();
 
-        System.out.println("How many characters to you wish to generate?");
+            Rpgcharacter bobby = new Rpgcharacter(str, dex, con, wis,intel,charisma, strCust2, strCust3);
+            bobby.toString();
+        }
+
+        System.out.println("How many random characters to you wish to generate?");
 
         Scanner scanLine = new Scanner(System.in);
         int number = scanLine.nextInt();
@@ -134,9 +166,5 @@ public class Main {
             System.out.println(" ");
         }
 
-        //Rpgcharacter sally = new Rpgcharacter();
-        //Rpgcharacter john = new Rpgcharacter();
-
-        //Rpgcharacter sam = new Rpgcharacter(10, 12, 13, 12, 14, 16, "Satyr", "Bard");
     }
 }
