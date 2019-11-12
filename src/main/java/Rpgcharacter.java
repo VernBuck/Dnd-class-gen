@@ -4,6 +4,7 @@ import java.util.*;
 
 public class Rpgcharacter {
     String raceVar;
+    String classVar;
     public Rpgcharacter() {
         Random rs = new Random();
         int high = 20;
@@ -38,6 +39,7 @@ public class Rpgcharacter {
         int randomValCL = rs.nextInt(4-0) + 0;
 
         int raceVariation = rs.nextInt(1-0) + 0;
+        int classVariation = rs.nextInt(3-0) + 0;
 
         int strength = randomValS;
         int dexterity = randomValD;
@@ -58,11 +60,76 @@ public class Rpgcharacter {
         }
 
         raceVar = raceComplex(attributes, raceVariation);
+        classVar = specialty(attributes, classVariation);
         System.out.println("generated character");
     }
 
+    public String specialty(ArrayList<Attribute> attr, int cv) {
+
+        String[] ploob = {"Ranger","Warrior","Mage", "Necromancer", "Cleric"};
+        if ((attr.get(0).getJ()).equals(ploob[0]) && cv == 0) {
+            return "Assassin";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[0]) && cv == 1) {
+            return "Trickster";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[0]) && cv == 2) {
+            return "Rogue";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[0]) && cv == 3) {
+            return "Spell Snatcher";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[1]) && cv == 0) {
+            return "Stalwart";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[1]) && cv == 1) {
+            return "Spell Blade";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[1]) && cv == 2) {
+            return "Berserker";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[1]) && cv == 3) {
+            return "Blade Breaker";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[2]) && cv == 0) {
+            return "Elementalist";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[2]) && cv == 1) {
+            return "Spiritualist";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[2]) && cv == 2) {
+            return "Battle Mage";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[2]) && cv == 3) {
+            return "Mage Killer";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[3]) && cv == 0) {
+            return "Witch";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[3]) && cv == 1) {
+            return "Lich";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[3]) && cv == 2) {
+            return "Hex Setter";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[3]) && cv == 3) {
+            return "Dark Knight";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[4]) && cv == 0) {
+            return "Bishop";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[4]) && cv == 1) {
+            return "Paladin";
+        }
+        if ((attr.get(0).getJ()).equals(ploob[4]) && cv == 2) {
+            return "Dark Priest";
+        }
+        else {
+            return "War Monk";
+        }
+    }
+
     public String raceComplex(ArrayList<Attribute> attr, int rv) {
-        ArrayList<Attribute> attributesrace = new ArrayList<Attribute>();
 
         String[] bloob = {"Elf","Human","Dwarf", "Orc", "Beastkin", "Etherial", "Dragon", "Fairy"};
 

@@ -2,6 +2,15 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        //Note: A detailed Skill list and a detailed inventory list would belong to seperate projects
+        //Note: There will be a larger project that makes calls to these smaller projects (via JAR)
+        //Note: Later versions of this application will determine character stats based on low, medium, and high level
+        //Note: Purpose, this is more for generating encounters than generating characters, but there will be a
+        //more detailed character generator created using this as a template.
+        //Note: There I also do plan to create a town, dungeon , and wilderness generator
+        //This allows a session using the same story to be more dynamic
+        //Note: A route generator that works in conjunction with the environment generator will be done
+        //Player choices will be divided into alignment, practicality, and butterfly effect (impact)
         System.out.println("Do you wish to generate a custom character?");
         Scanner scanLineCustom = new Scanner(System.in);
         String strCust = scanLineCustom.nextLine();
@@ -42,13 +51,16 @@ public class Main {
 
         for (int i = 0; i < number; i++) {
             Rpgcharacter billy = new Rpgcharacter();
-            // if (billy.raceVar)
             Fantasyrace billyspecs = new Fantasyrace();
+            Skills billyskill = new Skills();
 
             billyspecs.adventure();
 
             billyspecs.setName(billy.raceVar);
+            billyskill.setAbility(billy.classVar);
             System.out.println("Subclass " + billyspecs.getTitle());
+            billyskill.profTitle();
+            System.out.println(billyskill.getAbility());
 
             if (billyspecs.getTitle().equals("Valonian")) {
                 Valonian vbill = new Valonian();
